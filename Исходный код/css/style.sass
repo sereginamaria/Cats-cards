@@ -1,0 +1,294 @@
+$colorDefault: #1698d9
+$colorDefaultHover: #2ea8e6
+$colorSelect: #d91667
+$colorSelectHover: #e62e7a
+$colorDisabled: #b3b3b3
+
+@font-face
+  font-family: "Exo2.0"
+  src: url("../fonts/Exo2.0-Thin.ttf")
+  font-weight: normal
+  font-style: normal
+
+*
+  margin: 0
+  padding: 0
+
+\:root
+  height: 100%
+
+body
+  height: inherit
+  background: url("../img/bgr.jpg")
+  font-family: 'Trebuchet MS', sans-serif
+
+body:before
+  content: ""
+  position: fixed
+  z-index: -1
+  width: 100%
+  height: 100%
+  background: url("../img/bgr-shadow.png") 0 0/100% 100% no-repeat
+
+.slider1
+  display: flex
+  justify-content: center
+  align-items: center
+  height: inherit
+
+.slider1-content
+  width: 1200px
+  margin: auto 0
+  .slider1-title
+    text-align: center
+    font-size: 36px
+    color: #ffffff
+    font-family: 'Exo2.0', sans-serif
+
+.slider1-cards
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+
+.slider1-card-container
+  margin: 30px 40px
+  .card
+    position: relative
+    width: 320px
+    height: 480px
+    background: #f2f2f2
+    background: linear-gradient(135deg, transparent 36px, #f2f2f2 0)
+    border-radius: 10px
+    border-right: 4px solid $colorDefault
+    border-bottom: 4px solid $colorDefault
+    box-sizing: border-box
+    cursor: pointer
+    .border-top
+      position: absolute
+      left: 48px
+      width: 272px
+      height: 10px
+      border-top-right-radius: 10px
+      border-top: 4px solid $colorDefault
+      box-sizing: border-box
+    .border-left
+      position: absolute
+      z-index: 1
+      top: 45px
+      height: 435px
+      width: 10px
+      border-bottom-left-radius: 10px
+      border-left: 4px solid $colorDefault
+      box-sizing: border-box
+    .card-top
+      padding: 21px 50px 0 50px
+      .subtitle
+        font-size: 16px
+        color: #666666
+        margin-bottom: 5px
+      .subtitle-selected-hover
+        display: none
+        color: $colorSelectHover
+        font-size: 16px
+        margin-bottom: 5px
+      .title
+        font-size: 48px
+        font-weight: bold
+      .taste
+        font-size: 24px
+        font-weight: bold
+        margin-bottom: 15px
+      ul
+        li
+          list-style-type: none
+          font-size: 14px
+          color: #666666
+    .card-bottom
+      height: 305px
+      width: 312px
+      position: absolute
+      bottom: 0
+      left: 4px
+      overflow: hidden
+      .imgCat
+        left: -25px
+        top: 32px
+        position: absolute
+        z-index: 0
+      .ellipse
+        width: 81px
+        height: 81px
+        position: absolute
+        bottom: 15px
+        right: 15px
+        background: #138ac6
+        color: #ffffff
+        border-radius: 50%
+        text-align: center
+        .weight
+          font-size: 40px
+          margin-top: 5px
+        .weightUnit
+          font-size: 24px
+          line-height: 22px
+  .card:before
+    content: ""
+    position: absolute
+    border-top: 50px solid transparent
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorDefault 45%, $colorDefault 53%, transparent 53%, transparent 100% )
+    border-right: 50px solid white
+  .card:hover
+    border-right: 4px solid $colorDefaultHover
+    border-bottom: 4px solid $colorDefaultHover
+    .border-top
+      border-top: 4px solid $colorDefaultHover
+    .border-left
+      border-left: 4px solid $colorDefaultHover
+    .ellipse
+      background: $colorDefaultHover
+  .card:hover:before
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorDefaultHover 45%, $colorDefaultHover 53%, transparent 53%, transparent 100% )
+  .footer
+    text-align: center
+    color: #ffffff
+    font-size: 13px
+    margin-top: 14px
+    .buy
+      color: #138ac6
+      border-bottom: 1px dotted #138ac6
+      cursor: pointer
+    .footer-disabled, .footer-selected
+      display: none
+  .footer-select
+    .footer-selected
+      display: block
+    .footer-default
+      display: none
+  .card-select
+    border-right: 4px solid $colorSelect
+    border-bottom: 4px solid $colorSelect
+    .border-top
+      border-top: 4px solid $colorSelect
+    .border-left
+      border-left: 4px solid $colorSelect
+    .card-bottom
+      .ellipse
+        background: $colorSelect
+  .card-select:before
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorSelect 45%, $colorSelect 53%, transparent 53%, transparent 100% )
+  .card-select:hover
+    border-right: 4px solid $colorSelect
+    border-bottom: 4px solid $colorSelect
+    .border-top
+      border-top: 4px solid $colorSelect
+    .border-left
+      border-left: 4px solid $colorSelect
+    .ellipse
+      background: $colorSelect
+  .card-select:hover:before
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorSelect 45%, $colorSelect 53%, transparent 53%, transparent 100% )
+  .card-select-hover
+    border-right: 4px solid $colorSelect
+    border-bottom: 4px solid $colorSelect
+    .border-top
+      border-top: 4px solid $colorSelect
+    .border-left
+      border-left: 4px solid $colorSelect
+    .card-bottom
+      .ellipse
+        background: $colorSelect
+  .card-select-hover:before
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorSelect 45%, $colorSelect 53%, transparent 53%, transparent 100% )
+  .card-select-hover:hover
+    border-right: 4px solid $colorSelectHover
+    border-bottom: 4px solid $colorSelectHover
+    .border-top
+      border-top: 4px solid $colorSelectHover
+    .border-left
+      border-left: 4px solid $colorSelectHover
+    .card-top
+      .subtitle
+        display: none
+      .subtitle-selected-hover
+        display: block
+    .ellipse
+      background: $colorSelectHover
+  .card-select-hover:hover:before
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorSelectHover 45%, $colorSelectHover 53%, transparent 53%, transparent 100% )
+
+.card-disabled, .card-disabled:hover
+  .card
+    border-right: 4px solid $colorDisabled
+    border-bottom: 4px solid $colorDisabled
+    cursor: default
+    .border-top
+      border-top: 4px solid $colorDisabled
+    .border-left
+      border-left: 4px solid $colorDisabled
+    .card-top
+      .subtitle, .title, .taste, .list
+        opacity: 50%
+    .card-bottom
+      .imgCat
+        opacity: 50%
+      .ellipse
+        background: $colorDisabled
+  .card:before
+    border-image: linear-gradient(135deg, transparent 0%, transparent 45%, $colorDisabled 45%, $colorDisabled 53%, transparent 53%, transparent 100% )
+  .footer
+    .footer-default
+      display: none
+    .footer-disabled
+      display: block
+      color: #ffff66
+
+
+@media (max-width: 1200px)
+  .slider1-content
+    width: 800px
+  .slider1-cards
+    justify-content: center
+
+@media (max-width: 400px)
+  .slider1-card-container
+    margin: 30px 0
+
+@media (max-width: 360px)
+  .slider1-card-container
+    .card
+      width: 280px
+      height: 440px
+      .border-top
+        left: 45px
+        width: 235px
+      .border-left
+        top: 45px
+        height: 395px
+      .card-top
+        .subtitle, .subtitle-selected-hover
+          font-size: 14px
+        .title
+          font-size: 46px
+        .taste
+          font-size: 22px
+        .list
+          li
+            font-size: 12px
+      .card-bottom
+        width: 272px
+        .imgCat
+          width: 336px
+          height: 328px
+          top: 60px
+        .ellipse
+          width: 71px
+          height: 71px
+          .weight
+            font-size: 38px
+          .weightUnit
+            font-size: 22px
+            line-height: 12px
+    .footer
+      max-width: 280px
+
+
